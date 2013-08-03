@@ -241,6 +241,7 @@
         500 => 'Internal Server Error'
       );
       $http_message = $http_status_messages[$http_code];
+      header("Access-Control-Allow-Origin: *");
       header("HTTP/1.0 {$http_code} {$http_message}");
       header("Content-Type: {$content_type}");
       if(!is_string($body)) {
